@@ -4,58 +4,53 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "Does Novelist work offline?",
+    question: "Does it work offline?",
     answer:
-      "Yes — completely. No internet required to write. Your files stay on your computer.",
+      "Yes — completely. Novelist doesn't need an internet connection to run. Your files are stored locally and never touch a server.",
   },
   {
-    question: "What Windows versions are supported?",
+    question: "Which Windows versions does it support?",
     answer: "Windows 10 and Windows 11 (64-bit).",
   },
   {
-    question: "Will I get free updates?",
-    answer: "Yes, all future updates are free for existing customers.",
+    question: "Do I get updates after buying?",
+    answer:
+      "Yes. All future updates are included at no extra cost. Pay once, get everything.",
   },
   {
-    question: "What happens after the 14-day trial?",
+    question: "What happens when the trial ends?",
     answer:
-      "The app will prompt you to purchase a license key. Your work is never deleted.",
+      "The app will ask you to enter a license key. Your work is never deleted or locked — you just can't open new writing sessions until you activate.",
   },
   {
     question: "Is there a subscription?",
-    answer: "No. Pay once, use forever.",
+    answer: "No. $24.99 once, then it's yours forever.",
   },
   {
-    question: "Why does Windows show a security warning on install?",
+    question: "Windows shows a warning when I install — is that normal?",
     answer:
-      "Because the app isn't code-signed yet. Click 'More info' → 'Run anyway' to install safely. We're working on adding a code signature in a future update.",
+      "Yes. The installer isn't code-signed yet, so Windows SmartScreen flags it. Click \"More info\" → \"Run anyway\" to install. We're working on a code signature for a future release.",
   },
   {
-    question: "How does the AI assistant work?",
+    question: "How does the AI feature work?",
     answer:
-      "The AI feature connects to a local LLM you set up separately (e.g., Ollama). It does not send your writing to any external server.",
+      "It connects to a local LLM you install separately — Ollama works well. Your writing never leaves your computer.",
   },
 ];
 
-function FAQItem({
-  question,
-  answer,
-}: {
-  question: string;
-  answer: string;
-}) {
+function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
 
   return (
     <div className="border border-white/10 rounded-xl overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-6 py-5 text-left bg-[#1a1a1a] hover:bg-[#202020] transition-colors"
+        className="w-full flex items-center justify-between px-6 py-5 text-left bg-[#1a1a1a] hover:bg-[#1e1e1e] transition-colors"
         aria-expanded={open}
       >
         <span className="text-white font-medium pr-4">{question}</span>
         <svg
-          className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200 ${
+          className={`w-4 h-4 text-gray-500 flex-shrink-0 transition-transform duration-200 ${
             open ? "rotate-180" : ""
           }`}
           fill="none"
@@ -63,16 +58,12 @@ function FAQItem({
           stroke="currentColor"
           strokeWidth={2}
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M19 9l-7 7-7-7"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
       {open && (
-        <div className="px-6 py-4 bg-[#161616] border-t border-white/10">
-          <p className="text-gray-400 leading-relaxed">{answer}</p>
+        <div className="px-6 py-4 bg-[#161616] border-t border-white/5">
+          <p className="text-gray-400 text-sm leading-relaxed">{answer}</p>
         </div>
       )}
     </div>
@@ -82,13 +73,11 @@ function FAQItem({
 export default function FAQ() {
   return (
     <section id="faq" className="py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-gray-400 text-lg">
-            Have another question? Email us at{" "}
+      <div className="max-w-2xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">Questions</h2>
+          <p className="text-gray-400">
+            Anything else?{" "}
             <a
               href="mailto:hello@novelist-app.com"
               className="text-amber-400 hover:underline"
@@ -98,13 +87,9 @@ export default function FAQ() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-2">
           {faqs.map((faq) => (
-            <FAQItem
-              key={faq.question}
-              question={faq.question}
-              answer={faq.answer}
-            />
+            <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
           ))}
         </div>
       </div>
