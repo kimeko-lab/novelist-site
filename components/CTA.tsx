@@ -10,7 +10,7 @@ export default function CTA() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
-            href="https://novelist-app.com/download"
+            href="https://github.com/kimeko-lab/novelist/releases/download/v1.4.0/Novelist.Setup.1.4.0.exe"
             className="bg-amber-500 hover:bg-amber-400 text-black font-bold text-base px-8 py-3.5 rounded-lg transition-colors w-full sm:w-auto"
           >
             Download Free Trial

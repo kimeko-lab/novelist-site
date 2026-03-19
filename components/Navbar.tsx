@@ -34,7 +34,7 @@ export default function Navbar() {
 
           {/* CTA */}
           <a
-            href="https://novelist-app.com/download"
+            href="https://github.com/kimeko-lab/novelist/releases/download/v1.4.0/Novelist.Setup.1.4.0.exe"
             className="bg-amber-500 hover:bg-amber-400 text-black font-semibold text-sm px-4 py-2 rounded-lg transition-colors"
           >
             Download Free Trial
