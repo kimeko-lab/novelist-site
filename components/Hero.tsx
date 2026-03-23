@@ -30,7 +30,7 @@ export default function Hero() {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-8">
           <span className="w-2 h-2 rounded-full bg-amber-400 inline-block" />
-          <span className="text-gray-400 text-sm">Windows 10 &amp; 11 &nbsp;·&nbsp; v2.0 &nbsp;·&nbsp; 14-day free trial</span>
+          <span className="text-gray-400 text-sm">Windows 10 &amp; 11 &nbsp;·&nbsp; v2.1 &nbsp;·&nbsp; 14-day free trial</span>
         </div>
 
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-6">
@@ -48,7 +48,7 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-5">
           <a
-            href="https://github.com/kimeko-lab/novelist/releases/download/v2.0.14/Novelist-Setup-2.0.14.exe"
+            href="https://github.com/kimeko-lab/novelist/releases/download/v2.1.0/Novelist-Setup-2.1.0.exe"
             className="bg-amber-500 hover:bg-amber-400 text-black font-bold text-base px-10 py-4 rounded-lg transition-colors w-full sm:w-auto shadow-lg shadow-amber-500/20"
           >
             Download Free Trial
