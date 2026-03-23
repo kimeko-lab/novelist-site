@@ -87,7 +87,7 @@ export default function Features() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Built for the long haul
+            Novel writing software built for the long haul
           </h2>
           <p className="text-gray-400 text-lg max-w-xl mx-auto">
             Every tool you need to go from blank page to finished manuscript —

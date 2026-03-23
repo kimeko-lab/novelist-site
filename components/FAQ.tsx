@@ -41,6 +41,11 @@ const faqs = [
     answer:
       "Each license is for one device. If you want to move it to a new machine — upgrade, replacement, or reinstall — just email hello@novelist-app.com and we'll transfer it manually, usually within a few hours.",
   },
+  {
+    question: "Is Novelist a good Scrivener alternative?",
+    answer:
+      "Yes. Novelist covers the core features writers love in Scrivener — chapter and scene structure, character profiles, plot timeline, corkboard view — with a cleaner interface and a simpler price. No complicated project formats, no steep learning curve, just $49 once.",
+  },
 ];
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
@@ -80,7 +85,7 @@ export default function FAQ() {
     <section id="faq" className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4">Common Questions</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
           <p className="text-gray-400">
             Anything else?{" "}
             <a

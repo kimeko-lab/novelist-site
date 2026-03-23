@@ -18,7 +18,7 @@ export default function Pricing() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
-            One price. No catches.
+            One-time purchase. No subscription. No renewal.
           </h2>
           <p className="text-gray-400 text-lg">
             Pay once and the app is yours — no subscription, no renewal, no upsell.
