@@ -42,9 +42,9 @@ const faqs = [
       "Each license is for one device. If you want to move it to a new machine — upgrade, replacement, or reinstall — just email hello@novelist-app.com and we'll transfer it manually, usually within a few hours.",
   },
   {
-    question: "Is Novelist a good Scrivener alternative?",
+    question: "How does Novelist compare to other writing apps?",
     answer:
-      "Yes. Novelist covers the core features writers love in Scrivener — chapter and scene structure, character profiles, plot timeline, corkboard view — with a cleaner interface and a simpler price. No complicated project formats, no steep learning curve, just $49 once.",
+      "Most dedicated writing apps either charge a monthly fee — Dabble runs $10–15/month, Campfire around $9/month — or come with a steep learning curve (Scrivener). Novelist sits in between: the core tools long-form writers actually need, at a one-time price of $49. No subscription, no renewal, no features you'll never use.",
   },
 ];
 
