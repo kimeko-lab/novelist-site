@@ -1,9 +1,12 @@
 const includedFeatures = [
-  "All features — editor, characters, plot, codex, timeline",
-  "Drag-and-drop chapter & scene organization",
-  "Daily writing goals & session tracking",
+  "Full editor — rich text, auto-save, word count",
+  "Chapter & scene structure with drag-to-reorder",
+  "Character profiles & relationship map",
+  "Plot timeline, corkboard & notes",
+  "Find & replace across entire manuscript",
+  "Lore & codex for world-building",
   "Export to .docx and .txt",
-  "AI writing assistant (optional, local LLM)",
+  "AI writing assistant (bring your own API key)",
   "All future updates, free",
   "Works fully offline — no account needed",
   "30-day money-back guarantee",
@@ -30,7 +33,7 @@ export default function Pricing() {
 
           {/* Price */}
           <div className="mb-1">
-            <span className="text-6xl font-bold text-white">$24.99</span>
+            <span className="text-6xl font-bold text-white">$49</span>
           </div>
           <p className="text-gray-600 text-sm mb-8">one-time · Windows 10 &amp; 11</p>
 
@@ -57,11 +60,11 @@ export default function Pricing() {
             href="https://novelist.lemonsqueezy.com/buy/1421407"
             className="w-full bg-amber-500 hover:bg-amber-400 text-black font-bold text-base py-3.5 rounded-lg transition-colors block text-center mb-3"
           >
-            Buy Now — $24.99
+            Buy Now — $49
           </a>
 
           <a
-            href="https://github.com/kimeko-lab/novelist/releases/download/v1.4.0/Novelist.Setup.1.4.0.exe"
+            href="https://github.com/kimeko-lab/novelist/releases/download/v2.0.11/Novelist-Setup-2.0.11.exe"
             className="text-gray-500 hover:text-gray-300 text-sm transition-colors"
           >
             Try free for 14 days →

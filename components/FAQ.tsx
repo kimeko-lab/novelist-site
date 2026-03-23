@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "Is there a subscription?",
-    answer: "No. $24.99 once, then it's yours forever.",
+    answer: "No. $49 once, then it's yours forever.",
   },
   {
     question: "Windows shows a warning when I install — is that normal?",
@@ -34,7 +34,12 @@ const faqs = [
   {
     question: "How does the AI feature work?",
     answer:
-      "It connects to a local LLM you install separately — Ollama works well. Your writing never leaves your computer.",
+      "You bring your own API key from Claude (Anthropic) or OpenAI. The AI panel sends your prompt directly to that API — nothing goes through our servers. If you don't have an API key, the rest of the app works perfectly without it.",
+  },
+  {
+    question: "Can I use it on multiple computers?",
+    answer:
+      "Yes. Each license supports up to 2 machines. If you need more, just reach out.",
   },
 ];
 
