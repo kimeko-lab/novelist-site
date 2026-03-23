@@ -3,11 +3,11 @@
 import { useState, useEffect, useCallback } from "react";
 
 const SCREENSHOTS = [
-  { src: "/Screenshot 1.png", alt: "Novelist — writing editor" },
-  { src: "/Screenshot 2.png", alt: "Novelist — character map" },
-  { src: "/Screenshot 3.png", alt: "Novelist — plot timeline" },
-  { src: "/Screenshot 4.png", alt: "Novelist — corkboard view" },
-  { src: "/Screenshot 5.png", alt: "Novelist — story overview" },
+  { src: "/Screenshot 1.png", alt: "Novelist — writing editor", caption: "Distraction-free editor" },
+  { src: "/Screenshot 2.png", alt: "Novelist — character map", caption: "Character relationship map" },
+  { src: "/Screenshot 3.png", alt: "Novelist — plot timeline", caption: "Plot timeline" },
+  { src: "/Screenshot 4.png", alt: "Novelist — corkboard view", caption: "Corkboard view" },
+  { src: "/Screenshot 5.png", alt: "Novelist — story overview", caption: "Story overview" },
 ];
 
 export default function Hero() {
@@ -17,7 +17,6 @@ export default function Hero() {
   const prev = useCallback(() => setActive((a) => (a - 1 + SCREENSHOTS.length) % SCREENSHOTS.length), []);
   const next = useCallback(() => setActive((a) => (a + 1) % SCREENSHOTS.length), []);
 
-  // Auto-advance every 4s unless user is interacting
   useEffect(() => {
     if (paused) return;
     const t = setTimeout(next, 4000);
@@ -25,7 +24,7 @@ export default function Hero() {
   }, [active, paused, next]);
 
   return (
-    <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 text-center">
+    <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8 text-center">
       <div className="max-w-4xl mx-auto">
 
         {/* Badge */}
@@ -50,19 +49,19 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-5">
           <a
             href="https://github.com/kimeko-lab/novelist/releases/download/v2.0.14/Novelist-Setup-2.0.14.exe"
-            className="bg-amber-500 hover:bg-amber-400 text-black font-bold text-base px-8 py-3.5 rounded-lg transition-colors w-full sm:w-auto"
+            className="bg-amber-500 hover:bg-amber-400 text-black font-bold text-base px-10 py-4 rounded-lg transition-colors w-full sm:w-auto shadow-lg shadow-amber-500/20"
           >
             Download Free Trial
           </a>
           <a
             href="https://novelist.lemonsqueezy.com/buy/1421407"
-            className="bg-white/5 hover:bg-white/10 border border-white/20 text-white font-semibold text-base px-8 py-3.5 rounded-lg transition-colors w-full sm:w-auto"
+            className="bg-white/10 hover:bg-white/15 border border-white/25 text-white font-semibold text-base px-8 py-4 rounded-lg transition-colors w-full sm:w-auto"
           >
             Buy Now — $49
           </a>
         </div>
 
-        <p className="text-gray-600 text-sm mb-14">
+        <p className="text-gray-600 text-sm mb-12">
           No payment info needed &nbsp;·&nbsp; 30-day money-back guarantee
         </p>
 
@@ -78,6 +77,7 @@ export default function Hero() {
               <span className="w-3 h-3 rounded-full bg-white/10" />
               <span className="w-3 h-3 rounded-full bg-white/10" />
               <span className="w-3 h-3 rounded-full bg-white/10" />
+              <span className="ml-3 text-xs text-white/20">{SCREENSHOTS[active].caption}</span>
             </div>
 
             {/* Screenshot — click halves to navigate */}
@@ -90,20 +90,9 @@ export default function Hero() {
                 className="w-full block"
               />
 
-              {/* Left click zone */}
-              <button
-                onClick={prev}
-                className="absolute left-0 top-0 h-full w-1/2 cursor-w-resize"
-                aria-label="Previous screenshot"
-              />
-              {/* Right click zone */}
-              <button
-                onClick={next}
-                className="absolute right-0 top-0 h-full w-1/2 cursor-e-resize"
-                aria-label="Next screenshot"
-              />
+              <button onClick={prev} className="absolute left-0 top-0 h-full w-1/2 cursor-w-resize" aria-label="Previous screenshot" />
+              <button onClick={next} className="absolute right-0 top-0 h-full w-1/2 cursor-e-resize" aria-label="Next screenshot" />
 
-              {/* Arrow hints — visible on hover */}
               <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
                 <div className="bg-black/50 rounded-full p-2">
                   <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -121,20 +110,21 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Dot navigation */}
-          <div className="flex items-center justify-center gap-2 mt-4">
-            {SCREENSHOTS.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => { setActive(i); setPaused(false); }}
-                className={`rounded-full transition-all duration-300 ${
-                  i === active
-                    ? "w-6 h-2 bg-amber-400"
-                    : "w-2 h-2 bg-white/20 hover:bg-white/50"
-                }`}
-                aria-label={`Screenshot ${i + 1}`}
-              />
-            ))}
+          {/* Dot navigation + caption */}
+          <div className="flex flex-col items-center gap-2 mt-4">
+            <div className="flex items-center gap-2">
+              {SCREENSHOTS.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => { setActive(i); setPaused(false); }}
+                  className={`rounded-full transition-all duration-300 ${
+                    i === active ? "w-6 h-2 bg-amber-400" : "w-2 h-2 bg-white/20 hover:bg-white/50"
+                  }`}
+                  aria-label={`Screenshot ${i + 1}`}
+                />
+              ))}
+            </div>
+            <p className="text-xs text-gray-600">{SCREENSHOTS[active].caption}</p>
           </div>
 
           {/* Glow */}

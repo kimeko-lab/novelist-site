@@ -14,7 +14,7 @@ const includedFeatures = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
@@ -25,7 +25,7 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="max-w-sm mx-auto bg-[#1a1a1a] border border-amber-500/30 rounded-2xl p-8 flex flex-col items-center text-center shadow-xl shadow-black/40">
+        <div className="max-w-md mx-auto bg-[#1a1a1a] border border-amber-500/30 rounded-2xl p-10 flex flex-col items-center text-center shadow-xl shadow-black/40">
           {/* Badge */}
           <span className="bg-amber-500/10 text-amber-400 text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
             Lifetime license

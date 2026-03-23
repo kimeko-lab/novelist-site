@@ -1,6 +1,6 @@
 export default function CTA() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8">
+    <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-white mb-4">
           Start writing today.
@@ -10,14 +10,14 @@ export default function CTA() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
-            href="https://github.com/kimeko-lab/novelist/releases/download/v2.0.11/Novelist-Setup-2.0.11.exe"
-            className="bg-amber-500 hover:bg-amber-400 text-black font-bold text-base px-8 py-3.5 rounded-lg transition-colors w-full sm:w-auto"
+            href="https://github.com/kimeko-lab/novelist/releases/download/v2.0.14/Novelist-Setup-2.0.14.exe"
+            className="bg-amber-500 hover:bg-amber-400 text-black font-bold text-base px-10 py-4 rounded-lg transition-colors w-full sm:w-auto shadow-lg shadow-amber-500/20"
           >
             Download Free Trial
           </a>
           <a
             href="https://novelist.lemonsqueezy.com/buy/1421407"
-            className="bg-white/5 hover:bg-white/10 border border-white/20 text-white font-semibold text-base px-8 py-3.5 rounded-lg transition-colors w-full sm:w-auto"
+            className="bg-white/10 hover:bg-white/15 border border-white/30 text-white font-semibold text-base px-8 py-4 rounded-lg transition-colors w-full sm:w-auto"
           >
             Buy Now — $49
           </a>
