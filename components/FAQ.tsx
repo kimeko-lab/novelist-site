@@ -39,17 +39,7 @@ const faqs = [
   {
     question: "Can I use it on multiple computers?",
     answer:
-      "Yes. Each license supports up to 2 machines. If you need more, just reach out.",
-  },
-  {
-    question: "How do I sync my novels between devices?",
-    answer:
-      "Novelist stores your work in a single database file (novelist.db). To sync across devices, go to Settings → Storage and point the database location to a cloud-synced folder — OneDrive, Dropbox, or Google Drive all work great. Both devices need to point to the same synced folder. First-time setup: copy your existing novelist.db into the cloud folder, then change the path on each device.",
-  },
-  {
-    question: "How do I move my license to a different computer?",
-    answer:
-      "Open Settings → License → \"Deactivate this device\". This frees up your activation slot instantly. Then install Novelist on the new machine and enter your license key to activate it there. If your old device is lost or broken and you can't deactivate it, just email us at hello@novelist-app.com and we'll reset it manually.",
+      "Each license is for one device. If you want to move it to a new machine — upgrade, replacement, or reinstall — just email hello@novelist-app.com and we'll transfer it manually, usually within a few hours.",
   },
 ];
 
