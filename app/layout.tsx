@@ -12,7 +12,7 @@ const SITE_URL = "https://novelist-app.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Novelist — Novel Writing Software for Windows | One-Time Purchase",
+    default: "Novelist — Novel Writing Software for Windows",
     template: "%s | Novelist",
   },
   description:
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Novelist",
-    title: "Novelist — Novel Writing Software for Windows | One-Time Purchase",
+    title: "Novelist — Novel Writing Software for Windows",
     description:
       "A focused writing app for novelists. Chapters, characters, plot timelines, corkboard, AI assistant. Pay once — $49, no subscription. Free 14-day trial.",
     images: [
