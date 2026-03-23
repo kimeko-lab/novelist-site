@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const SCREENSHOTS = [
   { src: "/Screenshot 1.png", alt: "Novelist — writing editor" },
@@ -12,6 +12,17 @@ const SCREENSHOTS = [
 
 export default function Hero() {
   const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  const prev = useCallback(() => setActive((a) => (a - 1 + SCREENSHOTS.length) % SCREENSHOTS.length), []);
+  const next = useCallback(() => setActive((a) => (a + 1) % SCREENSHOTS.length), []);
+
+  // Auto-advance every 4s unless user is interacting
+  useEffect(() => {
+    if (paused) return;
+    const t = setTimeout(next, 4000);
+    return () => clearTimeout(t);
+  }, [active, paused, next]);
 
   return (
     <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 text-center">
@@ -56,7 +67,11 @@ export default function Hero() {
         </p>
 
         {/* App window mockup */}
-        <div className="relative w-full max-w-5xl mx-auto">
+        <div
+          className="relative w-full max-w-5xl mx-auto group"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
           <div className="bg-[#1a1a1a] rounded-xl border border-white/10 overflow-hidden shadow-2xl shadow-black/60">
             {/* Window chrome */}
             <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/10 bg-[#141414]">
@@ -64,14 +79,46 @@ export default function Hero() {
               <span className="w-3 h-3 rounded-full bg-white/10" />
               <span className="w-3 h-3 rounded-full bg-white/10" />
             </div>
-            {/* Screenshot */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              key={active}
-              src={SCREENSHOTS[active].src}
-              alt={SCREENSHOTS[active].alt}
-              className="w-full block"
-            />
+
+            {/* Screenshot — click halves to navigate */}
+            <div className="relative select-none">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                key={active}
+                src={SCREENSHOTS[active].src}
+                alt={SCREENSHOTS[active].alt}
+                className="w-full block"
+              />
+
+              {/* Left click zone */}
+              <button
+                onClick={prev}
+                className="absolute left-0 top-0 h-full w-1/2 cursor-w-resize"
+                aria-label="Previous screenshot"
+              />
+              {/* Right click zone */}
+              <button
+                onClick={next}
+                className="absolute right-0 top-0 h-full w-1/2 cursor-e-resize"
+                aria-label="Next screenshot"
+              />
+
+              {/* Arrow hints — visible on hover */}
+              <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="bg-black/50 rounded-full p-2">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </div>
+              </div>
+              <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="bg-black/50 rounded-full p-2">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Dot navigation */}
@@ -79,11 +126,11 @@ export default function Hero() {
             {SCREENSHOTS.map((_, i) => (
               <button
                 key={i}
-                onClick={() => setActive(i)}
-                className={`rounded-full transition-all ${
+                onClick={() => { setActive(i); setPaused(false); }}
+                className={`rounded-full transition-all duration-300 ${
                   i === active
-                    ? "w-5 h-1.5 bg-amber-400"
-                    : "w-1.5 h-1.5 bg-white/20 hover:bg-white/40"
+                    ? "w-6 h-2 bg-amber-400"
+                    : "w-2 h-2 bg-white/20 hover:bg-white/50"
                 }`}
                 aria-label={`Screenshot ${i + 1}`}
               />
