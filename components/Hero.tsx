@@ -54,7 +54,7 @@ export default function Hero() {
             Download Free Trial
           </a>
           <a
-            href="https://novelist.lemonsqueezy.com/buy/1421407"
+            href="https://novelist.lemonsqueezy.com/checkout/buy/f9a9f268-4ac1-46f0-8ed7-1370b35f17c9"
             className="bg-white/10 hover:bg-white/15 border border-white/25 text-white font-semibold text-base px-8 py-4 rounded-lg transition-colors w-full sm:w-auto"
           >
             Buy Now — $49
