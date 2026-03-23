@@ -50,7 +50,7 @@ export const metadata: Metadata = {
       "A focused writing app for novelists. Chapters, characters, plot timelines, corkboard, AI assistant. Pay once — $49, no subscription. Free 14-day trial.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og",
         width: 1200,
         height: 630,
         alt: "Novelist — Novel Writing Software for Windows",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "Novelist — Novel Writing Software for Windows",
     description:
       "Chapters, characters, plot timelines, corkboard & AI — one-time $49, no subscription. Free 14-day trial.",
-    images: ["/og-image.png"],
+    images: ["/og"],
   },
   robots: {
     index: true,
