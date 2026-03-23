@@ -1,4 +1,18 @@
+"use client";
+
+import { useState } from "react";
+
+const SCREENSHOTS = [
+  { src: "/Screenshot 1.png", alt: "Novelist — writing editor" },
+  { src: "/Screenshot 2.png", alt: "Novelist — character map" },
+  { src: "/Screenshot 3.png", alt: "Novelist — plot timeline" },
+  { src: "/Screenshot 4.png", alt: "Novelist — corkboard view" },
+  { src: "/Screenshot 5.png", alt: "Novelist — story overview" },
+];
+
 export default function Hero() {
+  const [active, setActive] = useState(0);
+
   return (
     <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 text-center">
       <div className="max-w-4xl mx-auto">
@@ -24,7 +38,7 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-5">
           <a
-            href="https://github.com/kimeko-lab/novelist/releases/download/v2.0.11/Novelist-Setup-2.0.11.exe"
+            href="https://github.com/kimeko-lab/novelist/releases/download/v2.0.14/Novelist-Setup-2.0.14.exe"
             className="bg-amber-500 hover:bg-amber-400 text-black font-bold text-base px-8 py-3.5 rounded-lg transition-colors w-full sm:w-auto"
           >
             Download Free Trial
@@ -53,11 +67,29 @@ export default function Hero() {
             {/* Screenshot */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/app-screenshot.png"
-              alt="Novelist app — editor view"
+              key={active}
+              src={SCREENSHOTS[active].src}
+              alt={SCREENSHOTS[active].alt}
               className="w-full block"
             />
           </div>
+
+          {/* Dot navigation */}
+          <div className="flex items-center justify-center gap-2 mt-4">
+            {SCREENSHOTS.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                className={`rounded-full transition-all ${
+                  i === active
+                    ? "w-5 h-1.5 bg-amber-400"
+                    : "w-1.5 h-1.5 bg-white/20 hover:bg-white/40"
+                }`}
+                aria-label={`Screenshot ${i + 1}`}
+              />
+            ))}
+          </div>
+
           {/* Glow */}
           <div className="absolute -inset-4 bg-amber-500/5 rounded-2xl blur-2xl -z-10" />
         </div>
