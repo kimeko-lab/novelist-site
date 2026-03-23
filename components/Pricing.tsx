@@ -57,14 +57,14 @@ export default function Pricing() {
 
           {/* Buy button */}
           <a
-            href="https://novelist.lemonsqueezy.com/buy/1421407"
+            href="https://novelist.lemonsqueezy.com/checkout/buy/f9a9f268-4ac1-46f0-8ed7-1370b35f17c9"
             className="w-full bg-amber-500 hover:bg-amber-400 text-black font-bold text-base py-3.5 rounded-lg transition-colors block text-center mb-3"
           >
             Buy Now — $49
           </a>
 
           <a
-            href="https://github.com/kimeko-lab/novelist/releases/download/v2.0.11/Novelist-Setup-2.0.11.exe"
+            href="https://github.com/kimeko-lab/novelist-releases/releases/download/v2.1.1/Novelist-Setup-2.1.1.exe"
             className="text-gray-500 hover:text-gray-300 text-sm transition-colors"
           >
             Try free for 14 days →
