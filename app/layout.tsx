@@ -11,9 +11,6 @@ export const metadata: Metadata = {
   title: "Novelist — Write Your Story",
   description:
     "A focused writing app for Windows. One-time purchase, no subscription.",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
