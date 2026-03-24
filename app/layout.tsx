@@ -12,11 +12,11 @@ const SITE_URL = "https://novelist-app.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Novelist — Novel Writing Software for Windows",
+    default: "Novelist — Your Novel's Full Creative Team",
     template: "%s | Novelist",
   },
   description:
-    "Novelist is a focused novel writing app for Windows. Chapters, characters, plot timelines, corkboard, and AI assistant — one-time $49, no subscription. Works fully offline. Free 14-day trial.",
+    "A novel writing studio for Windows with an AI assistant that knows your story. Brainstorm partner, plot auditor, writing coach — 10 AI providers, works offline, one-time $49.",
   keywords: [
     "novel writing software",
     "novel writing app",
@@ -45,23 +45,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Novelist",
-    title: "Novelist — Novel Writing Software for Windows",
+    title: "Novelist — Your Novel's Full Creative Team",
     description:
-      "A focused writing app for novelists. Chapters, characters, plot timelines, corkboard, AI assistant. Pay once — $49, no subscription. Free 14-day trial.",
+      "A novel writing studio with an AI assistant that knows your story. Brainstorm partner, plot auditor, writing coach. Pay once — $49, no subscription. Free 14-day trial.",
     images: [
       {
         url: "/og",
         width: 1200,
         height: 630,
-        alt: "Novelist — Novel Writing Software for Windows",
+        alt: "Novelist — Your Novel's Full Creative Team",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Novelist — Novel Writing Software for Windows",
+    title: "Novelist — Your Novel's Full Creative Team",
     description:
-      "Chapters, characters, plot timelines, corkboard & AI — one-time $49, no subscription. Free 14-day trial.",
+      "AI brainstorm partner, plot auditor, writing coach — 10 providers, works offline, one-time $49. Free 14-day trial.",
     images: ["/og"],
   },
   robots: {
