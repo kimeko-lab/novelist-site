@@ -18,7 +18,7 @@ export async function GET() {
           position: "relative",
         }}
       >
-        {/* Amber glow top-right */}
+        {/* Violet glow top-right */}
         <div
           style={{
             position: "absolute",
@@ -26,7 +26,7 @@ export async function GET() {
             right: "-80px",
             width: "500px",
             height: "500px",
-            background: "radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%)",
             borderRadius: "50%",
           }}
         />
@@ -38,14 +38,14 @@ export async function GET() {
               style={{
                 width: "40px",
                 height: "40px",
-                background: "#f59e0b",
+                background: "#7c3aed",
                 borderRadius: "10px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
               }}
             >
-              <div style={{ width: "20px", height: "3px", background: "#000", borderRadius: "2px", boxShadow: "0 6px 0 #000, 0 12px 0 #000" }} />
+              <div style={{ width: "20px", height: "3px", background: "#fff", borderRadius: "2px", boxShadow: "0 6px 0 #fff, 0 12px 0 #fff" }} />
             </div>
             <span style={{ color: "#ffffff", fontSize: "28px", fontWeight: "700", letterSpacing: "-0.5px" }}>
               Novelist
@@ -54,18 +54,18 @@ export async function GET() {
 
           <div
             style={{
-              background: "rgba(245,158,11,0.15)",
-              border: "1px solid rgba(245,158,11,0.4)",
+              background: "rgba(139,92,246,0.15)",
+              border: "1px solid rgba(139,92,246,0.4)",
               borderRadius: "999px",
               padding: "8px 20px",
-              color: "#f59e0b",
+              color: "#a78bfa",
               fontSize: "14px",
               fontWeight: "600",
               letterSpacing: "0.05em",
               textTransform: "uppercase",
             }}
           >
-            Windows 10 &amp; 11 · v2.1 · 14-day free trial
+            Windows 10 &amp; 11 · v2.2.0 · 14-day free trial
           </div>
         </div>
 
@@ -73,14 +73,14 @@ export async function GET() {
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
             <span style={{ color: "#ffffff", fontSize: "68px", fontWeight: "800", lineHeight: "1.05", letterSpacing: "-2px" }}>
-              Write your novel.
+              Your novel&apos;s
             </span>
-            <span style={{ color: "#f59e0b", fontSize: "68px", fontWeight: "800", lineHeight: "1.05", letterSpacing: "-2px" }}>
-              Keep it yours.
+            <span style={{ color: "#a78bfa", fontSize: "68px", fontWeight: "800", lineHeight: "1.05", letterSpacing: "-2px" }}>
+              full creative team.
             </span>
           </div>
           <p style={{ color: "#a1a1aa", fontSize: "24px", lineHeight: "1.5", maxWidth: "680px", margin: "0" }}>
-            Novel writing software for Windows — chapters, characters, plot timeline, corkboard &amp; AI assistant.
+            A writing studio with an AI assistant that knows your story — brainstorm partner, plot auditor, writing coach.
           </p>
         </div>
 
@@ -88,7 +88,7 @@ export async function GET() {
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           {/* Feature pills */}
           <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-            {["Offline · no account", "Drag-to-reorder chapters", "Character map", "AI assistant (BYOK)"].map((f) => (
+            {["10 AI providers", "Plot auditor", "Character developer", "Works fully offline"].map((f) => (
               <div
                 key={f}
                 style={{
@@ -108,7 +108,7 @@ export async function GET() {
           {/* Price badge */}
           <div
             style={{
-              background: "#f59e0b",
+              background: "#7c3aed",
               borderRadius: "16px",
               padding: "16px 32px",
               display: "flex",
@@ -119,8 +119,8 @@ export async function GET() {
               marginLeft: "32px",
             }}
           >
-            <span style={{ color: "#000", fontSize: "40px", fontWeight: "800", lineHeight: "1" }}>$49</span>
-            <span style={{ color: "rgba(0,0,0,0.6)", fontSize: "13px", fontWeight: "600" }}>one-time · no subscription</span>
+            <span style={{ color: "#fff", fontSize: "40px", fontWeight: "800", lineHeight: "1" }}>$49</span>
+            <span style={{ color: "rgba(255,255,255,0.6)", fontSize: "13px", fontWeight: "600" }}>one-time · no subscription</span>
           </div>
         </div>
       </div>
