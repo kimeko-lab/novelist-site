@@ -6,8 +6,8 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="text-white font-bold text-xl tracking-tight">
-            Novelist
+          <a href="#" className="text-xl font-bold tracking-tight">
+            <span className="text-white">Novel</span><span className="text-violet-400">ist</span>
           </a>
 
           {/* Nav links */}
@@ -34,8 +34,8 @@ export default function Navbar() {
 
           {/* CTA */}
           <a
-            href="https://github.com/kimeko-lab/novelist-releases/releases/download/v2.1.2/Novelist-Setup-2.1.2.exe"
-            className="bg-amber-500 hover:bg-amber-400 text-black font-semibold text-sm px-4 py-2 rounded-lg transition-colors"
+            href="https://github.com/kimeko-lab/novelist-releases/releases/download/v2.2.0/Novelist-Setup-2.2.0.exe"
+            className="bg-violet-500/10 hover:bg-violet-500/25 border border-violet-500/35 text-violet-400 font-semibold text-sm px-4 py-2 rounded-lg transition-colors"
           >
             Download Free Trial
           </a>
