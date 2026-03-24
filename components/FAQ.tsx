@@ -6,7 +6,22 @@ const faqs = [
   {
     question: "Does it work offline?",
     answer:
-      "Yes — completely. Novelist doesn't need an internet connection to run. Your files are stored locally and never touch a server.",
+      "Yes — completely. Novelist doesn't need an internet connection to run. Your files are stored locally and never touch a server. For AI assistance offline, use Ollama: install it locally, point Novelist to it in AI Settings, and every AI query stays on your machine with no internet required.",
+  },
+  {
+    question: "Which AI providers does Novelist support?",
+    answer:
+      "Novelist supports 10 AI providers: Claude (Anthropic), GPT-4o (OpenAI), Gemini (Google), Groq, DeepSeek, Mistral, xAI (Grok), Perplexity, Cohere, and Ollama for fully local use. You bring your own API key — no extra subscription needed.",
+  },
+  {
+    question: "Does the AI see my writing?",
+    answer:
+      "Your text is sent directly from your machine to your chosen provider's API — Novelist's servers never see it. With Ollama, nothing leaves your machine at all.",
+  },
+  {
+    question: "Does the AI know my characters and plot?",
+    answer:
+      "Yes. Before every message, Novelist automatically injects your characters, plot lines, codex entries, and active scene as context — so answers are specific to your story, not generic writing advice.",
   },
   {
     question: "Which Windows versions does it support?",
@@ -30,11 +45,6 @@ const faqs = [
     question: "Windows shows a warning when I install — is that normal?",
     answer:
       "Yes. The installer isn't code-signed yet, so Windows SmartScreen flags it. Click \"More info\" → \"Run anyway\" to install. We're working on a code signature for a future release.",
-  },
-  {
-    question: "How does the AI feature work?",
-    answer:
-      "You bring your own API key from Claude (Anthropic) or OpenAI. The AI panel sends your prompt directly to that API — nothing goes through our servers. If you don't have an API key, the rest of the app works perfectly without it.",
   },
   {
     question: "Can I use it on multiple computers?",
@@ -90,7 +100,7 @@ export default function FAQ() {
             Anything else?{" "}
             <a
               href="mailto:hello@novelist-app.com"
-              className="text-amber-400 hover:underline"
+              className="text-violet-400 hover:underline"
             >
               hello@novelist-app.com
             </a>
