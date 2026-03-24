@@ -1,4 +1,24 @@
-const features = [
+type Feature = {
+  title: string;
+  description: string;
+  featured?: boolean;
+  icon: React.ReactNode;
+};
+
+import React from "react";
+
+const features: Feature[] = [
+  {
+    title: "AI writing assistant — built into your story",
+    description:
+      "10 providers to choose from — Claude, GPT-4o, Gemini, Groq, Ollama, and more. Your assistant reads your characters, chapters, and world before answering. Your writing never leaves your machine.",
+    featured: true,
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+      </svg>
+    ),
+  },
   {
     title: "Clean writing editor",
     description:
@@ -69,16 +89,6 @@ const features = [
       </svg>
     ),
   },
-  {
-    title: "AI writing assistant",
-    description:
-      "Ask for suggestions, brainstorm plot ideas, or get unstuck — using your own Claude or OpenAI API key. Your writing stays on your machine.",
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
-      </svg>
-    ),
-  },
 ];
 
 export default function Features() {
@@ -87,11 +97,10 @@ export default function Features() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Novel writing software built for the long haul
+            Everything your novel needs — writing tools and intelligent assistance in one place.
           </h2>
           <p className="text-gray-400 text-lg max-w-xl mx-auto">
-            Every tool you need to go from blank page to finished manuscript —
-            without the monthly bill.
+            All the structure to keep your story organized, plus an assistant that knows it inside out.
           </p>
         </div>
 
@@ -99,9 +108,11 @@ export default function Features() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="bg-[#1a1a1a] border border-white/10 rounded-xl p-5 flex flex-col gap-3 hover:border-white/20 transition-colors"
+              className={`bg-[#1a1a1a] border border-white/10 rounded-xl p-5 flex flex-col gap-3 hover:border-white/20 transition-colors ${
+                feature.featured ? "lg:col-span-2 border-violet-500/20 hover:border-violet-500/35" : ""
+              }`}
             >
-              <div className="w-9 h-9 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center flex-shrink-0">
+              <div className="w-9 h-9 rounded-lg bg-violet-500/10 text-violet-400 flex items-center justify-center flex-shrink-0">
                 {feature.icon}
               </div>
               <div>
