@@ -64,7 +64,7 @@ export default function Pricing() {
           </a>
 
           <a
-            href="https://github.com/kimeko-lab/novelist-releases/releases/download/v2.1.2/Novelist-Setup-2.1.2.exe"
+            href="https://github.com/kimeko-lab/novelist-releases/releases/download/v2.2.0/Novelist-Setup-2.2.0.exe"
             className="text-gray-500 hover:text-gray-300 text-sm transition-colors"
           >
             Try free for 14 days →
