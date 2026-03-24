@@ -1,55 +1,52 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-
-const SCREENSHOTS = [
-  { src: "/Screenshot 1.png", alt: "Novelist — writing editor", caption: "Distraction-free editor" },
-  { src: "/Screenshot 2.png", alt: "Novelist — story overview", caption: "Story overview" },
-  { src: "/Screenshot 3.png", alt: "Novelist — plot timeline", caption: "Plot timeline" },
-  { src: "/Screenshot 4.png", alt: "Novelist — corkboard view", caption: "Corkboard view" },
-  { src: "/Screenshot 5.png", alt: "Novelist — character map", caption: "Character relationship map" },
-];
-
 export default function Hero() {
-  const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
-
-  const prev = useCallback(() => setActive((a) => (a - 1 + SCREENSHOTS.length) % SCREENSHOTS.length), []);
-  const next = useCallback(() => setActive((a) => (a + 1) % SCREENSHOTS.length), []);
-
-  useEffect(() => {
-    if (paused) return;
-    const t = setTimeout(next, 4000);
-    return () => clearTimeout(t);
-  }, [active, paused, next]);
-
   return (
     <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8 text-center">
       <div className="max-w-4xl mx-auto">
 
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-8">
-          <span className="w-2 h-2 rounded-full bg-amber-400 inline-block" />
-          <span className="text-gray-400 text-sm">Windows 10 &amp; 11 &nbsp;·&nbsp; v2.1 &nbsp;·&nbsp; 14-day free trial</span>
+        <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/20 rounded-full px-4 py-1.5 mb-8">
+          <span className="w-2 h-2 rounded-full bg-violet-500 shadow shadow-violet-500 inline-block" />
+          <span className="text-violet-400 text-sm">Windows 10 &amp; 11 &nbsp;·&nbsp; v2.2.0 &nbsp;·&nbsp; 14-day free trial</span>
         </div>
 
+        {/* H1 */}
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-6">
-          Write your novel.
-          <br />
-          <span className="text-amber-400">Keep it yours.</span>
+          Your novel&apos;s<br />
+          <span className="text-violet-400">full creative team.</span>
         </h1>
 
-        <p className="text-xl text-gray-400 max-w-xl mx-auto mb-10 leading-relaxed">
-          A writing app built for long-form fiction — chapters, characters,
-          timelines, and a clean editor that stays out of your way.
-          One price, no subscription.
+        {/* Sub-headline */}
+        <p className="text-xl text-gray-400 max-w-xl mx-auto mb-8 leading-relaxed">
+          Brainstorm ideas, audit your plot, develop characters, and write —
+          all in one app that knows your story inside out.
+          Your data never leaves your machine.
         </p>
+
+        {/* Role pills */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {[
+            "Brainstorming partner",
+            "Plot auditor",
+            "Writing coach",
+            "Character developer",
+            "Scene reviewer",
+          ].map((role) => (
+            <span
+              key={role}
+              className="bg-violet-500/10 border border-violet-500/20 text-violet-400 rounded-full text-xs font-semibold px-3 py-1"
+            >
+              {role}
+            </span>
+          ))}
+        </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-5">
           <a
-            href="https://github.com/kimeko-lab/novelist-releases/releases/download/v2.1.2/Novelist-Setup-2.1.2.exe"
-            className="bg-amber-500 hover:bg-amber-400 text-black font-bold text-base px-10 py-4 rounded-lg transition-colors w-full sm:w-auto shadow-lg shadow-amber-500/20"
+            href="https://github.com/kimeko-lab/novelist-releases/releases/download/v2.2.0/Novelist-Setup-2.2.0.exe"
+            className="bg-violet-700 hover:bg-violet-600 text-white font-bold text-base px-10 py-4 rounded-lg transition-colors w-full sm:w-auto shadow-lg shadow-violet-700/30"
           >
             Download Free Trial
           </a>
@@ -66,101 +63,86 @@ export default function Hero() {
         </p>
 
         {/* App window mockup */}
-        <div
-          className="relative w-full max-w-5xl mx-auto group"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-        >
+        <div className="relative w-full max-w-5xl mx-auto">
           <div className="bg-[#1a1a1a] rounded-xl border border-white/10 overflow-hidden shadow-2xl shadow-black/60">
-            {/* Window chrome — decorative dots only, no dynamic caption text */}
+            {/* Window chrome */}
             <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/10 bg-[#141414]">
               <span className="w-3 h-3 rounded-full bg-white/10" />
               <span className="w-3 h-3 rounded-full bg-white/10" />
               <span className="w-3 h-3 rounded-full bg-white/10" />
-              <span className="ml-3 text-xs text-white/30">Novelist</span>
+              <span className="ml-3 text-xs text-white/30">Novelist — Chapter 3 · The Reveal</span>
             </div>
 
-            {/* Screenshot carousel
-                - padding-bottom gives stable container height before images load (no layout jump)
-                - all 5 images rendered + preloaded simultaneously
-                - only active image visible via opacity, others opacity:0
-                - top/right/bottom/left:0 fills the padding-box correctly (height:100% would resolve to 0)
-            */}
-            <div className="relative select-none" style={{ paddingBottom: "62.1%", height: 0 }}>
-              {SCREENSHOTS.map((s, i) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  key={s.src}
-                  src={s.src}
-                  alt={s.alt}
-                  {...({ fetchPriority: i === 0 ? "high" : "low" } as object)}
-                  style={{
-                    position: "absolute",
-                    top: 0, right: 0, bottom: 0, left: 0,
-                    width: "100%",
-                    objectFit: "cover",
-                    display: "block",
-                    // No crossfade: instant switch keeps caption always in sync with image
-                    opacity: i === active ? 1 : 0,
-                    pointerEvents: "none",
-                  }}
-                />
-              ))}
-
-              {/* Click left/right halves to navigate */}
-              <button
-                type="button"
-                onMouseDown={e => e.preventDefault()}
-                onClick={prev}
-                className="absolute left-0 top-0 h-full w-1/2 cursor-w-resize z-10"
-                aria-label="Previous screenshot"
-              />
-              <button
-                type="button"
-                onMouseDown={e => e.preventDefault()}
-                onClick={next}
-                className="absolute right-0 top-0 h-full w-1/2 cursor-e-resize z-10"
-                aria-label="Next screenshot"
-              />
-
-              {/* Arrow hints on hover */}
-              <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity z-20">
-                <div className="bg-black/50 rounded-full p-2">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                  </svg>
+            {/* App layout: sidebar + editor + AI panel */}
+            <div className="flex" style={{ height: "320px" }}>
+              {/* Sidebar */}
+              <div className="w-44 flex-shrink-0 bg-[#111] border-r border-white/6 p-3 flex flex-col gap-1">
+                <div className="text-[10px] text-white/20 uppercase tracking-widest mb-2 px-1">Chapters</div>
+                {["Ch 1 · The Beginning", "Ch 2 · The Turn"].map((ch) => (
+                  <div key={ch} className="text-[11px] text-white/30 px-2 py-1.5 rounded">{ch}</div>
+                ))}
+                <div className="text-[11px] text-violet-400 bg-violet-500/10 border border-violet-500/20 px-2 py-1.5 rounded">
+                  ▸ Ch 3 · The Reveal
                 </div>
+                <div className="mt-3 text-[10px] text-white/20 uppercase tracking-widest mb-1 px-1">Tools</div>
+                {["Characters", "Plot", "Codex", "Notes"].map((t) => (
+                  <div key={t} className="text-[11px] text-white/25 px-2 py-1.5 rounded">{t}</div>
+                ))}
               </div>
-              <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity z-20">
-                <div className="bg-black/50 rounded-full p-2">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
+
+              {/* Editor */}
+              <div className="flex-1 bg-[#1a1a1a] p-6 flex flex-col gap-2">
+                <div className="h-2 rounded bg-white/8 w-4/5" />
+                <div className="h-2 rounded bg-white/8 w-11/12" />
+                <div className="h-2 rounded bg-white/8 w-3/4" />
+                <div className="h-2 rounded bg-white/8 w-full mt-3" />
+                <div className="h-2 rounded bg-white/8 w-5/6" />
+                <div className="h-2 rounded bg-white/8 w-10/12" />
+                <div className="h-2 rounded bg-white/8 w-2/3" />
+                <div className="h-2 rounded bg-white/8 w-full mt-3" />
+                <div className="h-2 rounded bg-white/8 w-9/12" />
+                <div className="h-2 rounded bg-white/8 w-4/5" />
+              </div>
+
+              {/* AI Panel */}
+              <div className="w-56 flex-shrink-0 bg-[#111] border-l border-violet-500/20 flex flex-col">
+                <div className="px-3 py-2.5 border-b border-violet-500/15 text-[11px] font-semibold text-violet-400">
+                  ✦ AI Assistant
+                </div>
+                <div className="flex-1 p-3 flex flex-col gap-2 justify-end">
+                  <div className="self-end bg-violet-500/15 text-violet-200 text-[10px] rounded-lg rounded-br-sm px-2.5 py-2 max-w-[90%] leading-relaxed text-right">
+                    Does Elena&apos;s motive make sense in ch 3?
+                  </div>
+                  <div className="self-start bg-white/5 text-white/55 text-[10px] rounded-lg rounded-bl-sm px-2.5 py-2 max-w-[95%] leading-relaxed">
+                    Based on her backstory in ch 1, her motive is consistent — but the reveal feels too abrupt. Consider adding a hesitation beat before she acts.
+                  </div>
+                </div>
+                <div className="px-3 py-2 border-t border-white/6">
+                  <div className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-[10px] text-white/20">
+                    Ask anything about your novel...
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Dot navigation + caption — always in sync with active (no delay) */}
-          <div className="flex flex-col items-center gap-2 mt-4">
-            <div className="flex items-center gap-2">
-              {SCREENSHOTS.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => { setActive(i); setPaused(false); }}
-                  className={`rounded-full transition-all duration-300 ${
-                    i === active ? "w-6 h-2 bg-amber-400" : "w-2 h-2 bg-white/20 hover:bg-white/50"
-                  }`}
-                  aria-label={`Screenshot ${i + 1}`}
-                />
+            {/* Provider strip */}
+            <div className="flex items-center justify-center gap-3 px-4 py-3 border-t border-white/6 flex-wrap">
+              <span className="text-[10px] text-white/25">Works with</span>
+              {["Claude", "GPT-4o", "Gemini", "Groq", "Ollama", "+5 more"].map((p) => (
+                <span
+                  key={p}
+                  className="text-[10px] font-medium text-white/35 bg-white/4 border border-white/8 rounded px-2 py-0.5"
+                >
+                  {p}
+                </span>
               ))}
             </div>
-            <p className="text-xs text-gray-400">{SCREENSHOTS[active].caption}</p>
           </div>
 
           {/* Glow */}
-          <div className="absolute -inset-4 bg-amber-500/5 rounded-2xl blur-2xl -z-10" />
+          <div className="absolute -inset-4 bg-violet-500/5 rounded-2xl blur-2xl -z-10" />
         </div>
+
       </div>
     </section>
   );
