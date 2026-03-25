@@ -62,7 +62,7 @@ export default function AIShowcase() {
                 muted
                 loop
                 playsInline
-                className="w-full aspect-[8/5] object-cover"
+                className="w-full aspect-[320/732]"
               >
                 <source src={`/demos/${s.videoSlug}.webm`} type="video/webm" />
                 <source src={`/demos/${s.videoSlug}.mp4`} type="video/mp4" />
