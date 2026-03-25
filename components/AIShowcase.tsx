@@ -87,7 +87,7 @@ export default function AIShowcase() {
             loop
             playsInline
             className="w-full block"
-            style={{ aspectRatio: '1280 / 800' }}
+            style={{ aspectRatio: '700 / 440' }}
           >
             <source src={`/demos/${s.videoSlug}.mp4`} type="video/mp4" />
           </video>
